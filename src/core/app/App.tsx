@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { List } from '../components/list/list';
+import { useCharacters } from '../hook/GOT.hook';
 import './App.css';
 
-function App() {
-    return <List></List>;
-}
+export function App() {
+    const { characters, handleLoad, handleUpdate } = useCharacters();
 
-export default App;
+    useEffect(() => {
+        handleLoad();
+    }, [handleLoad]);
+
+    return (
+        <List
+            characters={characters}
+            handleLoad={handleLoad}
+            handleUpdate={handleUpdate}
+        ></List>
+    );
+}
