@@ -1,11 +1,27 @@
+import { CharacterType } from '../../type/GOT.type';
 import { Item } from '../item/item';
 
-export function List() {
+export function List({
+    characters,
+    handleUpdate,
+}: {
+    characters: Array<CharacterType>;
+    handleUpdate: (characters: Partial<Array<CharacterType>>) => void;
+}) {
     return (
         <>
             <div className="app container">
                 <ul className="characters-list row list-unstyled">
-                    <Item item={model}></Item>
+                    {characters.map((item) => {
+                        return (
+                            <li key={item.name} className="character col">
+                                <Item
+                                    item={item}
+                                    handleUpdate={handleUpdate}
+                                ></Item>
+                            </li>
+                        );
+                    })}
                 </ul>
             </div>
             <div className="comunications">

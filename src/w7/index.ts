@@ -124,7 +124,7 @@ export function index() {
 //                 document.querySelector('#imgSpeak');
 //             console.log(item.name.split(' ')[0]);
 //             if (speakImg != null) {
-//                 speakImg.src = `./assets/characters/${item.image}`;
+// speakImg.src = `./assets/characters/${item.image}`;
 //             }
 //             const speakOn: HTMLElement | null =
 //                 document.querySelector('.comunications');

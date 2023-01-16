@@ -1,22 +1,21 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { charactersDetails } from '../model/model';
 import { CharacterType } from '../type/GOT.type';
 
 export function useCharacters() {
-    const initialState: Array<CharacterType> = [charactersDetails];
+    const initialState: Array<CharacterType> = [];
 
     const [characters, setCharacters] = useState(initialState);
 
-    const handleLoad = () => {
-        setCharacters(characters);
-    };
+    const handleLoad = useCallback(async () => {
+        const characterList = charactersDetails;
+        setCharacters(characterList);
+    }, []);
 
-    const handleUpdate = function (character: Array<CharacterType>) {
+    const handleUpdate = async function (character: Partial<CharacterType>) {
         setCharacters(
-            character.map((item) =>
-                item.name === character[XX].name
-                    ? { ...item, ...character }
-                    : item
+            characters.map((item) =>
+                item.name === character.name ? { ...item, ...character } : item
             )
         );
     };

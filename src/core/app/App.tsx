@@ -10,11 +10,5 @@ export function App() {
         handleLoad();
     }, [handleLoad]);
 
-    return (
-        <List
-            characters={characters}
-            handleLoad={handleLoad}
-            handleUpdate={handleUpdate}
-        ></List>
-    );
+    return <List characters={characters} handleUpdate={handleUpdate}></List>;
 }
