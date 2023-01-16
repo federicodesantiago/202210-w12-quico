@@ -2,7 +2,7 @@ import { CharacterType } from '../type/GOT.type';
 
 export const charactersDetails: Array<CharacterType> = [
     {
-        image: '../src/assets/characters/Jaime_luchador.webp',
+        image: '../../../src/assets/characters/Jaime_luchador.webp',
         name: 'Jaime Lannister',
         family: 'Lannister',
         age: 34,
@@ -11,6 +11,7 @@ export const charactersDetails: Array<CharacterType> = [
         weapon: 'espadaca',
         skills: 27,
         status: false,
+        type: 'fighter',
     },
     {
         image: '../assets/characters/Tyrion_asesor_Dae.webp',
@@ -21,6 +22,7 @@ export const charactersDetails: Array<CharacterType> = [
         emoji: '&#127891',
         advised: 'Daenerys Targaryen',
         status: false,
+        type: 'adviser',
     },
 
     {
@@ -32,6 +34,7 @@ export const charactersDetails: Array<CharacterType> = [
         emoji: '&#128081',
         yearsService: 2,
         status: false,
+        type: 'king',
     },
 
     {
@@ -41,9 +44,10 @@ export const charactersDetails: Array<CharacterType> = [
         age: 16,
         sentence: 'Primero pego y luego pregunto',
         emoji: '&#9876',
-        weapon: 'dragons',
+        weapon: 'Dragones',
         skills: 55,
         status: false,
+        type: 'fighter',
     },
 
     {
@@ -56,5 +60,6 @@ export const charactersDetails: Array<CharacterType> = [
         master: 'Jaime Lannister',
         ballLevel: 7,
         status: false,
+        type: 'squire',
     },
 ];

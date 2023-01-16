@@ -1,9 +1,12 @@
-import { useCallback, useState } from 'react';
+// import { useCallback, useReducer, useState } from 'react';
 import { charactersDetails } from '../model/model';
+// import { charactersReducer } from '../reducer/GOT.reducer';
 import { CharacterType } from '../type/GOT.type';
 
 export function useCharacters() {
     const initialState: Array<CharacterType> = [];
+
+    // const [characters, dispatch] = useReducer(initialState, charactersReducer);
 
     const [characters, setCharacters] = useState(initialState);
 

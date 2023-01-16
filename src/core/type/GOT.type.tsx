@@ -12,6 +12,7 @@ export type CharacterType = {
     master?: string;
     ballLevel?: number;
     status: boolean;
+    type: string;
 };
 
 // export class Character implements CharacterType {
