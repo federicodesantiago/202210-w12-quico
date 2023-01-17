@@ -1,24 +1,27 @@
-import { useState } from 'react';
+// import { useCallback, useReducer, useState } from 'react';
+import { useCallback, useReducer } from 'react';
 import { charactersDetails } from '../model/model';
+import {
+    charactersLoadCreator,
+    charactersUpdateCreator,
+} from '../reducer/action.creators';
+import { charactersReducer } from '../reducer/GOT.reducer';
+// import { charactersReducer } from '../reducer/GOT.reducer';
 import { CharacterType } from '../type/GOT.type';
 
 export function useCharacters() {
-    const initialState: Array<CharacterType> = [charactersDetails];
+    const initialState: Array<CharacterType> = charactersDetails;
 
-    const [characters, setCharacters] = useState(initialState);
+    const [characters, dispatch] = useReducer(charactersReducer, initialState);
 
-    const handleLoad = () => {
-        setCharacters(characters);
-    };
+    // const [characters, setCharacters] = useState(initialState);
 
-    const handleUpdate = function (character: Array<CharacterType>) {
-        setCharacters(
-            character.map((item) =>
-                item.name === character[XX].name
-                    ? { ...item, ...character }
-                    : item
-            )
-        );
+    const handleLoad = useCallback(async () => {
+        dispatch(charactersLoadCreator(characters));
+    }, [characters]);
+
+    const handleUpdate = async function (character: Partial<CharacterType>) {
+        dispatch(charactersUpdateCreator(characters));
     };
 
     return {

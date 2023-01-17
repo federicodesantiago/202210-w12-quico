@@ -4,17 +4,11 @@ import { useCharacters } from '../hook/GOT.hook';
 import './App.css';
 
 export function App() {
-    const { characters, handleLoad, handleUpdate } = useCharacters();
+    const { handleLoad } = useCharacters();
 
     useEffect(() => {
         handleLoad();
     }, [handleLoad]);
 
-    return (
-        <List
-            characters={characters}
-            handleLoad={handleLoad}
-            handleUpdate={handleUpdate}
-        ></List>
-    );
+    return <List></List>;
 }
